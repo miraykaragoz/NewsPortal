@@ -1,0 +1,22 @@
+﻿@model News
+
+@{
+    ViewBag.Title = "Haber Güncelle";
+}
+
+<h2 class="mb-4">Haber Güncelle</h2>
+<form class="row g-3" method="post" autocomplete="off">
+    <div class="mb-3">
+        <label class="form-label">Başlık</label>
+        <input required type="text" value="@Model.Title" class="form-control" name="Title">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Özet</label>
+        <input required type="text" value="@Model.Summary" class="form-control" name="Summary">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Detay</label>
+        <input required type="text" value="@Model.Detail" class="form-control" name="Detail">
+    </div>
+    <button class="btn btn-primary">Düzenle</button>
+</form>

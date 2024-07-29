@@ -1,0 +1,72 @@
+﻿@model List<News>
+
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="container mx-auto px-4">
+    @foreach (var news in Model)
+    {
+        <article class="shadow-lg rounded-lg overflow-hidden my-4">
+            <div class="bg-white p-6 flex flex-col justify-start h-full">
+                <a href="/home/detail/@news.Id" class="text-3xl font-bold hover:text-gray-700">@news.Title</a>
+                <p class="pb-4">@news.Summary</p>
+                <a href="/home/detail/@news.Id" class="uppercase hover:text-gray-700">Devamı için tıklayınız <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+    }
+</div>
+
+
+<style>
+    .container {
+        max-width: 1200px; /* Konteynerin maksimum genişliği */
+        margin: 0 auto; /* Ortalar */
+        padding: 20px; /* Konteynerin iç boşluğu */
+    }
+
+    article {
+        transition: transform 0.2s; /* Hover efekti için geçiş süresi */
+        background-color: #fff; /* Arka plan rengi beyaz */
+        border-radius: 8px; /* Kenarları yuvarlatır */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+        overflow: hidden; /* Taşan içerik gizlenir */
+        margin-bottom: 20px; /* Kartlar arasında boşluk */
+        padding: 20px; /* Kartın iç boşluğu */
+    }
+
+        article:hover {
+            transform: translateY(-5px); /* Hover olduğunda yukarı hareket eder */
+        }
+
+    a {
+        text-decoration: none; /* Link alt çizgisini kaldırır */
+        color: #333; /* Link rengi koyu gri */
+    }
+
+    .text-3xl {
+        font-size: 1.875rem; /* Başlık boyutu */
+        margin-bottom: 0.5rem; /* Başlık ile özet arasında boşluk */
+    }
+
+    .pb-4 {
+        padding-bottom: 1rem; /* Başlık ile özet arasında boşluk */
+    }
+
+    .pb-6 {
+        padding-bottom: 1rem; /* Özet ile detay linki arasında boşluk */
+    }
+
+    .uppercase {
+        font-weight: bold; /* Kalın yazı stili */
+        color: #007bff; /* Detay linki için mavi renk */
+    }
+
+    .hover\:text-gray-700:hover {
+        color: #4a5568; /* Hover durumunda koyu gri rengi */
+    }
+
+    h1, h2 {
+        margin: 0; /* Başlıkların dış kenar boşluğunu sıfırlar */
+    }
+</style>

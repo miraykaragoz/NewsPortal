@@ -1,0 +1,65 @@
+﻿@model News
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<article class="flex flex-col shadow my-4">
+    @if (Model != null)
+    {
+        <div class="foto-galeri">
+            <img src="/uploads/@Model.ImgPath" alt="Image" class="foto-img" onclick="openModal('/uploads/@Model.ImgPath')" />
+        </div>
+        <div class="bg-white flex flex-col justify-start p-6">
+            <h1 class="text-2xl font-bold pb-3">@Model.Title</h1>
+            @Html.Raw(Model.Detail)
+        </div>
+    }
+    else
+    {
+        <p>Üzgünüm böyle bir gönderi yok.</p>
+    }
+</article>
+
+<style>
+    .foto-galeri {
+        display: flex;
+        justify-content: center; /* Fotoğrafı ortalar */
+        margin-bottom: 16px; /* Fotoğraf ile başlık arasında boşluk */
+        height: 200px; /* Fotoğraf için belirli bir yükseklik */
+        overflow: hidden; /* Taşan içeriği gizle */
+    }
+
+    .foto-img {
+        max-width: 100%; /* Görüntü genişliği %100 olacak şekilde ayarlanır */
+        height: auto; /* Yüksekliği orantılı şekilde ayarlar */
+        border-radius: 8px; /* Kenarları yuvarlatır */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölgeler ekler */
+        cursor: pointer; /* Tıklanabilir olduğunu belirtir */
+        display: block; /* Bloğun üstte yer almasını sağlar */
+        max-height: 100%; /* Yüksekliği sınırlamak için */
+    }
+
+    .bg-white {
+        background-color: #fff; /* Arka plan rengi beyaz */
+        border-radius: 8px; /* Kenarları yuvarlatır */
+        padding: 20px; /* İç boşluk */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Gölgeler ekler */
+    }
+
+    h1 {
+        font-size: 24px; /* Başlık boyutu */
+        margin-bottom: 12px; /* Başlık ile detaylar arasında boşluk */
+    }
+
+    article {
+        margin: 20px; /* Makale etiketinin çevresinde boşluk */
+        border-radius: 8px; /* Kenarları yuvarlatır */
+        overflow: hidden; /* Taşan içerik gizlenir */
+    }
+
+    p {
+        color: #666; /* Detay yazısı için gri renk */
+        line-height: 1.5; /* Satır yüksekliği */
+    }
+</style>
