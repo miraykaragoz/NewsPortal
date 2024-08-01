@@ -9,7 +9,7 @@ namespace NewsPortal.Controllers
     {
         public IActionResult Index()
         {
-            var connectionString = "Server=104.247.162.242\\MSSQLSERVER2019;Initial Catalog=miraykar_newsportal;User Id=miraykar_newsportaldbuser;Password=Se87l4?a0;TrustServerCertificate=True";
+            var connectionString = "";
 
             using var connection = new SqlConnection(connectionString);
 
@@ -48,7 +48,7 @@ namespace NewsPortal.Controllers
 
             model.ImgPath = ImageName;
 
-            var connectionString = "Server=104.247.162.242\\MSSQLSERVER2019;Initial Catalog=miraykar_newsportal;User Id=miraykar_newsportaldbuser;Password=Se87l4?a0;TrustServerCertificate=True";
+            var connectionString = "";
 
             using var connection = new SqlConnection(connectionString);
 

@@ -4,8 +4,8 @@
     ViewBag.Title = "Admin Paneli";
 }
 
-<nav>
-    <a style="text-decoration: none" href="/admin/create">Haber Ekle</a>
+<nav class="admin-nav">
+    <a href="/admin/create">Haber Ekle</a>
 </nav>
 
 <h2>Haberler</h2>
@@ -35,22 +35,22 @@
 </table>
 
 <style>
-    nav {
+    .admin-nav {
         background-color: black; /* Arka plan rengi */
         padding: 10px; /* İç boşluk */
         text-align: center; /* Ortalamak için */
     }
 
-        nav a {
+        .admin-nav a {
             color: #fff; /* Yazı rengi */
             font-size: 18px; /* Yazı boyutu */
             padding: 10px 20px; /* İç boşluk */
+            text-decoration: none; /* Alt çizgi kaldırır */
             transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
         }
 
-            nav a:hover {
-                background-color: grey; /* Hover rengi */
+            .admin-nav a:hover {
+                background-color: thistle; /* Hover rengi */
                 color: white; /* Hover'da yazı rengi */
             }
-
 </style>

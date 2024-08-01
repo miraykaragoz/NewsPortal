@@ -20,12 +20,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Haberler</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin Paneli</a>
                         </li>
                     </ul>
+                </div>
+                <div>
+                    @if (ViewData["username"] != null)
+                    {
+                        <span>Hoşgeldin @ViewData["username"]</span>
+                        <a href="">çıkış yap</a>
+                    }
                 </div>
             </div>
         </nav>
