@@ -73,7 +73,7 @@ namespace NewsPortal.Controllers
 
         public IActionResult Update(int id)
         {
-            var connectionString = "Server=104.247.162.242\\MSSQLSERVER2019;Initial Catalog=miraykar_newsportal;User Id=miraykar_newsportaldbuser;Password=Se87l4?a0;TrustServerCertificate=True";
+            var connectionString = "";
 
             using var connection = new SqlConnection(connectionString);
 
@@ -85,7 +85,7 @@ namespace NewsPortal.Controllers
         [HttpPost]
         public IActionResult Update(News model)
         {
-            var connectionString = "Server=104.247.162.242\\MSSQLSERVER2019;Initial Catalog=miraykar_newsportal;User Id=miraykar_newsportaldbuser;Password=Se87l4?a0;TrustServerCertificate=True";
+            var connectionString = "";
 
             using var connection = new SqlConnection(connectionString);
 
@@ -109,7 +109,7 @@ namespace NewsPortal.Controllers
 
         public IActionResult Delete(int id)
         {
-            var connectionString = "Server=104.247.162.242\\MSSQLSERVER2019;Initial Catalog=miraykar_newsportal;User Id=miraykar_newsportaldbuser;Password=Se87l4?a0;TrustServerCertificate=True";
+            var connectionString = "";
 
             using var connection = new SqlConnection(connectionString);
 
